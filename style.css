@@ -1,0 +1,601 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #202b40;
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 6%;
+  background: white;
+  box-shadow: 0 2px 12px #00000008;
+}
+
+.navbar h2 {
+  color: #3757db;
+}
+
+.navbar span {
+  color: #718096;
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 45px 20px;
+  background: linear-gradient(135deg, #e9efff, #f7edff);
+}
+
+.tag {
+  color: #485ed9;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(27px, 4vw, 42px);
+  margin: 10px 0;
+}
+
+.hero > p:last-child {
+  color: #64748b;
+}
+
+.workspace {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+.editor, .recommendations {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px #1725540a;
+}
+
+.editor h2, .preview-heading h2 {
+  margin-bottom: 16px;
+}
+
+.editor h3 {
+  margin: 24px 0 10px;
+  font-size: 16px;
+}
+
+.editor label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #dce2ed;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #aab9ff;
+  border-color: #536be8;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.primary {
+  background: #425be5;
+  color: white;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.primary:hover {
+  background: #3047c6;
+}
+
+.editor-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.editor-buttons button {
+  flex: 1;
+  background: #edf0ff;
+  color: #394ec7;
+}
+
+.preview-area {
+  min-width: 0;
+}
+
+.preview-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.preview-heading p {
+  color: #718096;
+  font-size: 13px;
+}
+
+.live-badge {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+.resume {
+  background: white;
+  min-height: 750px;
+  max-width: 850px;
+  margin: auto;
+  box-shadow: 0 5px 25px #17255412;
+  overflow-wrap: anywhere;
+  --accent: #3158c9;
+  --heading: #243b69;
+  --body: #38445b;
+}
+
+.resume-header {
+  padding: 35px;
+  background: var(--accent);
+  color: white;
+}
+
+.resume-header h1 {
+  font-size: 30px;
+  overflow-wrap: anywhere;
+}
+
+.resume-header > p {
+  margin: 5px 0 12px;
+}
+
+.contact {
+  font-size: 11px;
+  opacity: 0.95;
+  overflow-wrap: anywhere;
+}
+
+.resume-body {
+  padding: 30px 35px;
+}
+
+.resume-section {
+  margin-bottom: 23px;
+  color: var(--body);
+  break-inside: avoid;
+}
+
+.resume-section h3 {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: var(--heading);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.resume-section h4 {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.resume-section p {
+  font-size: 12px;
+  white-space: pre-line;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-list span {
+  background: #edf1ff;
+  color: #344db2;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+/* Template 1: Modern Blue */
+.resume.modern {
+  --accent: #3158c9;
+  --heading: #243b69;
+}
+
+/* Template 2: Classic Professional */
+.resume.classic {
+  --accent: #273444;
+  --heading: #273444;
+}
+
+.resume.classic .resume-header {
+  text-align: center;
+}
+
+.resume.classic .resume-section h3 {
+  border-bottom: 1px solid #9ca3af;
+}
+
+/* Template 3: Minimal Clean */
+.resume.minimal {
+  --accent: #ffffff;
+  --heading: #111827;
+  --body: #374151;
+}
+
+.resume.minimal .resume-header {
+  background: white;
+  color: #111827;
+  border-bottom: 3px solid #111827;
+}
+
+.resume.minimal .contact {
+  color: #374151;
+}
+
+.resume.minimal .skill-list span {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+/* Template 4: Creative Purple */
+.resume.creative {
+  --accent: #713bc1;
+  --heading: #713bc1;
+  --body: #3f3651;
+}
+
+.resume.creative .resume-header {
+  background: linear-gradient(120deg, #713bc1, #a05ce0);
+}
+
+.resume.creative .resume-section h3 {
+  border-bottom-style: dashed;
+}
+
+.recommendations {
+  margin: 25px auto;
+  max-width: 850px;
+  border: 1px solid #e5e7eb;
+}
+
+.recommendations h3 {
+  color: #4f46e5;
+}
+
+.recommendations > p {
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.tip {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #f7f8ff;
+  border-left: 4px solid #6c63e8;
+  font-size: 13px;
+}
+
+.tip.good {
+  background: #effcf4;
+  border-color: #22a06b;
+}
+
+.tip strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #718096;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-area {
+    width: 100%;
+  }
+
+  .resume {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .workspace {
+    padding: 0 10px;
+  }
+
+  .editor, .recommendations {
+    padding: 17px;
+  }
+
+  .resume-header {
+    padding: 23px;
+  }
+
+  .resume-header h1 {
+    font-size: 24px;
+  }
+
+  .resume-body {
+    padding: 22px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .navbar, .hero, .editor, .preview-heading,
+  .recommendations, footer {
+    display: none !important;
+  }
+
+  .workspace {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  .preview-area {
+    width: 100%;
+  }
+
+  .resume {
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .resume-header, .resume-body {
+    break-inside: avoid;
+  }
+
+  .resume-section {
+    break-inside: avoid;
+  }
+}
+/* PHOTO UPLOAD AREA */
+.photo-upload-box {
+  padding: 16px;
+  margin: 12px 0;
+  border: 2px dashed #c7d2fe;
+  border-radius: 12px;
+  text-align: center;
+  background: #f8f9ff;
+}
+
+.upload-preview {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px;
+  border: 3px solid #dbe4ff;
+}
+
+.upload-label {
+  display: block;
+  background: #e8edff;
+  color: #3549ba;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.photo-upload-box input[type="file"] {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.photo-upload-box p {
+  font-size: 12px;
+  color: #718096;
+  margin: 5px 0 12px;
+}
+
+#removePhotoBtn {
+  color: #b42318;
+  background: #feeceb;
+}
+
+.profile-photo {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 3px 10px #00000020;
+}
+
+.resume-header {
+  position: relative;
+  padding-right: 135px;
+}
+
+/* EMERALD ELEGANCE */
+.resume.emerald {
+  --accent: #087f68;
+  --heading: #087f68;
+  --body: #334b45;
+}
+
+.resume.emerald .resume-section h3 {
+  border-bottom: 2px solid #70c7ad;
+}
+
+.resume.emerald .skill-list span {
+  color: #076653;
+  background: #dff7ef;
+}
+
+/* ROSE GOLD */
+.resume.rose {
+  --accent: #f6e5e8;
+  --heading: #754553;
+  --body: #55424a;
+}
+
+.resume.rose .resume-header {
+  color: #754553;
+  border-bottom: 3px solid #b47a8a;
+}
+
+.resume.rose .contact {
+  color: #754553;
+}
+
+.resume.rose .profile-photo {
+  border-color: #b47a8a;
+}
+
+.resume.rose .resume-section h3 {
+  border-bottom-color: #b47a8a;
+}
+
+.resume.rose .skill-list span {
+  background: #f8edf0;
+  color: #754553;
+}
+
+/* MIDNIGHT EXECUTIVE */
+.resume.midnight {
+  --accent: #18243a;
+  --heading: #253f69;
+  --body: #334155;
+}
+
+.resume.midnight .resume-header {
+  background: #18243a;
+}
+
+.resume.midnight .resume-section h3 {
+  border-bottom-color: #8ba7d8;
+}
+
+.resume.midnight .skill-list span {
+  color: #253f69;
+  background: #e9effa;
+}
+
+/* SUNSET GRADIENT */
+.resume.sunset {
+  --accent: #b94443;
+  --heading: #a23e38;
+  --body: #55413d;
+}
+
+.resume.sunset .resume-header {
+  background: linear-gradient(120deg, #b94443, #ed8a50);
+}
+
+.resume.sunset .resume-section h3 {
+  border-bottom-color: #ed8a50;
+}
+
+.resume.sunset .skill-list span {
+  background: #fff0e5;
+  color: #a23e38;
+}
+
+/* Mobile photo adjustment */
+@media (max-width: 500px) {
+  .profile-photo {
+    width: 65px;
+    height: 65px;
+    top: 18px;
+    right: 16px;
+  }
+
+  .resume-header {
+    padding: 22px;
+    padding-right: 90px;
+  }
+
+  .resume-header h1 {
+    font-size: 21px;
+  }
+}
+
+/* Preserve resume colors and photos in PDF */
+@media print {
+  .profile-photo {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
