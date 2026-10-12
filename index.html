@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeCraft | Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2>✦ ResumeCraft</h2>
+  <span>Build your future, one resume at a time.</span>
+</header>
+
+<section class="hero">
+  <p class="tag">YOUR CAREER STARTS HERE</p>
+  <h1>Create a resume that gets noticed.</h1>
+  <p>Fill in your details, choose a design, and create your professional resume.</p>
+</section>
+
+<main class="workspace">
+
+  <section class="editor">
+    <h2>Build your resume</h2>
+
+    <label>Choose a template</label>
+    <select id="template">
+  <option value="modern">💙 Modern Blue</option>
+  <option value="classic">🖤 Classic Professional</option>
+  <option value="minimal">🤍 Minimal Clean</option>
+  <option value="creative">💜 Creative Purple</option>
+  <option value="emerald">💚 Emerald Elegance</option>
+  <option value="rose">🌸 Rose Gold</option>
+  <option value="midnight">🌙 Midnight Executive</option>
+  <option value="sunset">🌅 Sunset Gradient</option>
+</select>
+        <h3>Profile Photo</h3>
+
+<div class="photo-upload-box">
+  <img
+    id="photoPreview"
+    src=""
+    alt="Profile photo preview"
+    class="upload-preview"
+    hidden
+  >
+
+  <label for="photoInput" class="upload-label">
+    📸 Choose your photo
+  </label>
+
+  <input
+    id="photoInput"
+    type="file"
+    accept="image/png,image/jpeg,image/webp"
+  >
+
+  <p>JPG, PNG or WebP · Maximum 5 MB</p>
+
+  <button id="removePhotoBtn" type="button">
+    Remove photo
+  </button>
+</div>
+      <option value="modern">Modern Blue</option>
+      <option value="classic">Classic Professional</option>
+      <option value="minimal">Minimal Clean</option>
+      <option value="creative">Creative Purple</option>
+    </select>
+
+    <h3>Personal Information</h3>
+    <input id="name" placeholder="Full name">
+    <input id="job" placeholder="Job title / Career goal">
+    <input id="email" type="email" placeholder="Email address">
+    <input id="phone" placeholder="Phone number">
+    <input id="location" placeholder="City, Country">
+    <input id="linkedin" placeholder="LinkedIn profile (optional)">
+
+    <h3>Professional Summary</h3>
+    <textarea id="summary" rows="4"
+      placeholder="Write a short introduction about yourself"></textarea>
+
+    <h3>Education</h3>
+    <input id="degree" placeholder="Degree / Course">
+    <input id="college" placeholder="College / University">
+    <input id="year" placeholder="Graduation year">
+    <input id="grade" placeholder="CGPA / Percentage (optional)">
+
+    <h3>Skills</h3>
+    <textarea id="skills" rows="3"
+      placeholder="C, Python, HTML, CSS, Communication"></textarea>
+
+    <h3>Projects</h3>
+    <input id="projectName" placeholder="Project name">
+    <textarea id="projects" rows="4"
+      placeholder="Explain your project, your contribution, and the result"></textarea>
+
+    <h3>Experience / Internship</h3>
+    <input id="experienceTitle" placeholder="Role / Internship (optional)">
+    <textarea id="experience" rows="3"
+      placeholder="Responsibilities and achievements (optional)"></textarea>
+
+    <h3>Certifications & Achievements</h3>
+    <textarea id="certifications" rows="3"
+      placeholder="Courses, certificates, awards (optional)"></textarea>
+
+    <div class="editor-buttons">
+      <button id="sampleBtn" type="button">Try Sample</button>
+      <button id="clearBtn" type="button">Clear Form</button>
+    </div>
+
+    <button id="downloadBtn" class="primary" type="button">
+      Download Resume as PDF
+    </button>
+  </section>
+
+  <section class="preview-area">
+    <div class="preview-heading">
+      <div>
+        <h2>Live Preview</h2>
+        <p>Your resume updates as you type.</p>
+      </div>
+      <span class="live-badge">● LIVE</span>
+    </div>
+
+    <article id="resume" class="resume modern">
+      <div class="resume-header">
+        <h1 id="outName">Your Name</h1>
+        <p id="outJob">Your Career Goal</p>
+        <div class="contact" id="outContact">
+          Add your contact information
+        </div>
+      </div>
+
+      <div class="resume-body">
+        <section class="resume-section" id="summarySection">
+          <h3>PROFILE</h3>
+          <p id="outSummary">Your professional summary will appear here.</p>
+        </section>
+
+        <section class="resume-section" id="educationSection">
+          <h3>EDUCATION</h3>
+          <h4 id="outDegree">Your degree</h4>
+          <p id="outCollege">Your college or university</p>
+          <p id="outEducationMeta"></p>
+        </section>
+
+        <section class="resume-section" id="skillsSection">
+          <h3>SKILLS</h3>
+          <div id="outSkills" class="skill-list">
+            <span>Your skills</span>
+          </div>
+        </section>
+
+        <section class="resume-section" id="projectsSection">
+          <h3>PROJECTS</h3>
+          <h4 id="outProjectName">Your project</h4>
+          <p id="outProjects">Describe your project here.</p>
+        </section>
+
+        <section class="resume-section" id="experienceSection">
+          <h3>EXPERIENCE</h3>
+          <h4 id="outExperienceTitle"></h4>
+          <p id="outExperience"></p>
+        </section>
+
+        <section class="resume-section" id="certificationsSection">
+          <h3>CERTIFICATIONS & ACHIEVEMENTS</h3>
+          <p id="outCertifications"></p>
+        </section>
+      </div>
+    </article>
+
+    <section class="recommendations">
+      <h3>✦ Resume Coach</h3>
+      <p>Personalized suggestions to improve your resume.</p>
+      <div id="recommendationList"></div>
+    </section>
+  </section>
+
+</main>
+
+<footer>
+  <p>Made with ♥ by ResumeCraft | Your next opportunity starts here.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
